@@ -4,6 +4,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"fmt"
 )
 
 //noinspection GoUnusedExportedFunction
@@ -32,5 +33,7 @@ func FileToByteslice(filename string) []byte {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Println(byteSlice)
 	return byteSlice
 }
