@@ -1,8 +1,12 @@
 package main
 
-import "./filemode"
+import (
+	"./filemode"
+	"os"
+)
 
 
 func main(){
-	filemode.Fileinfo()
+	filename := os.Args[1]
+	filemode.FileInfo(filename)
 }
