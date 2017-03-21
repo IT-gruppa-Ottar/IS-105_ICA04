@@ -8,7 +8,7 @@ import (
 	//"bytes"
 )
 
-//noinspection GoUnusedExportedFunction
+
 func FileToByteslice(filename string) []byte {
 
 	// Open file for reading
