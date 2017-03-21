@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-//noinspection GoUnusedExportedFunction
+
 func FileToByteslice(filename string) []byte {
 
 	// Open file for reading
@@ -32,5 +32,9 @@ func FileToByteslice(filename string) []byte {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	//fmt.Println(byteSlice)
 	return byteSlice
+
 }
+
