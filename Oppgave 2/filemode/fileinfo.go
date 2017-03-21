@@ -42,13 +42,13 @@ func FileInfo(filename string) {
 
 	fmt.Println()
 	mode := fileInfo.Mode()
-	fmt.Println("Is a directory:			", mode&os.ModeDir != 0)
-	fmt.Println("Is a regular file:		", mode.IsRegular())
-	fmt.Println("Has Unix permission bits:	", fileInfo.Mode())
-	fmt.Println("Is append only:			", mode&os.ModeAppend != 0)
-	fmt.Println("Is a device file:		", mode&os.ModeDevice != 0)
-	fmt.Println("Is a Unix character device:	", mode&os.ModeCharDevice != 0)
-	fmt.Println("Is a Unix block device:		", mode&os.ModeSocket != 0)
-	fmt.Println("Is a symbolic link:		", mode&os.ModeSymlink != 0)
+	fmt.Println("Is a directory: \t\t\t\t", mode&os.ModeDir != 0)
+	fmt.Println("Is a regular file: \t\t\t\t", mode.IsRegular())
+	fmt.Println("Has Unix permission bits: \t\t", fileInfo.Mode())
+	fmt.Println("Is append only: \t\t\t\t", mode&os.ModeAppend != 0)
+	fmt.Println("Is a device file: \t\t\t\t", mode&os.ModeDevice != 0)
+	fmt.Println("Is a Unix character device: \t", mode&os.ModeCharDevice != 0)
+	fmt.Println("Is a Unix block device: \t\t", mode&os.ModeSocket != 0)
+	fmt.Println("Is a symbolic link: \t\t\t", mode&os.ModeSymlink != 0)
 
 }
