@@ -20,18 +20,25 @@ func FileInfo(filename string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("-------------------------------------------")
 	fmt.Println("Information about file:", fileInfo.Name())
 
-	if fileInfo.Size() < 1000 {
-		fmt.Println("Size in bytes:", fileInfo.Size())
-
-	} else if fileInfo.Size() >= 1000 && fileInfo.Size() <= 1000000{
-		fmt.Println("Size in KB:", float32(fileInfo.Size()) / float32(1024))
-
-	} else if fileInfo.Size() >= 1000000{
-		fmt.Println("Size in MB:", float32(fileInfo.Size()) / float32(1048576))
+	size := float64(fileInfo.Size())
+	kibi := size / 1000
+	mebi := size / 1000000
+	gibi := size / 1000000000
+	fmt.Println("File size in Bytes: ", size)
+	fmt.Println("File size in Kibibytes: ", kibi)
+	if(mebi > 0.1) {
+		fmt.Println("File size in Mebibytes: ", mebi)
+	} else{
+		fmt.Println("File is under 0,1 Mebibytes.")
 	}
+	if(gibi > 0.1) {
+		fmt.Println("File size in Gibibytes: ", gibi)
+	} else{
+		fmt.Println("File is under 0,1 Gibibytes.")
+	}
+
 
 	fmt.Println()
 	mode := fileInfo.Mode()
@@ -43,6 +50,5 @@ func FileInfo(filename string) {
 	fmt.Println("Is a Unix character device:	", mode&os.ModeCharDevice != 0)
 	fmt.Println("Is a Unix block device:		", mode&os.ModeSocket != 0)
 	fmt.Println("Is a symbolic link:		", mode&os.ModeSymlink != 0)
-	fmt.Println("-------------------------------------------")
 
 }
