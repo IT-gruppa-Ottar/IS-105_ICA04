@@ -28,7 +28,7 @@ func oppgave4a() {
 	//prosent
 	var tot float64 = 10539
 
-	fmt.Println("UiAs fakultet: \t\t\t\t Antall studenter: \t Sannsynlighet:")
+	fmt.Println("UiAs fakultet: \t\t\t\t Antall studenter: \t Sannsynlighet vist i %:")
 	for i := 0; i < len(a); i ++ {
 		fmt.Print(f[i])
 		fmt.Print(a[i])
