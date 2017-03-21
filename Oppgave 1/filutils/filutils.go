@@ -4,8 +4,6 @@ import (
 	"io"
 	"log"
 	"os"
-	"fmt"
-	//"bytes"
 )
 
 
@@ -35,7 +33,8 @@ func FileToByteslice(filename string) []byte {
 		log.Fatal(err)
 	}
 
-	fmt.Println(byteSlice)
+	//fmt.Println(byteSlice)
 	return byteSlice
 
 }
+

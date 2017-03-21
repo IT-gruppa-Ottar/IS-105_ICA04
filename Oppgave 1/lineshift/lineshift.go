@@ -3,11 +3,15 @@ package lineshift
 import (
 	"fmt"
 	"strings"
+	"../filutils"
 )
 
 //noinspection GoUnusedExportedFunction
-func LineShift(filnavn []byte) {
-	s := string(filnavn[:])
+func LineShift(filnavn string) {
+
+	byteSlice := fileutils.FileToByteslice(filnavn)
+
+	s := string(byteSlice[:])
 
 	//Viser stringen som testes
 	//fmt.Printf("%q", s)
