@@ -23,21 +23,21 @@ func FileInfo(filename string) {
 	fmt.Println("Information about file:", fileInfo.Name())
 
 	size := float64(fileInfo.Size())
-	kibi := size / 1000
-	mebi := size / 1000000
-	gibi := size / 1000000000
-	fmt.Println("File size in Bytes: ", size)
-	fmt.Println("File size in Kibibytes: ", kibi)
-	if(mebi > 0.1) {
-		fmt.Println("File size in Mebibytes: ", mebi)
-	} else{
-		fmt.Println("File is under 0,1 Mebibytes.")
-	}
-	if(gibi > 0.1) {
-		fmt.Println("File size in Gibibytes: ", gibi)
-	} else{
-		fmt.Println("File is under 0,1 Gibibytes.")
-	}
+	kibi := size / 1024
+	mebi := size / 1048576
+	gibi := size / 1073741824
+	fmt.Println("Size in bytes")
+	fmt.Printf("%.2f", size)
+	fmt.Println()
+	fmt.Println("Size in kibi")
+	fmt.Printf("%.2f", kibi)
+	fmt.Println()
+	fmt.Println("Size in mebi")
+	fmt.Printf("%.2f", mebi,)
+	fmt.Println()
+	fmt.Println("Size in gibi")
+	fmt.Printf("%.2f", gibi,)
+
 
 
 	fmt.Println()
