@@ -17,27 +17,17 @@ func FileInfo(filename string) {
 	// an error if there is no file.
 	// fileInfo, err = os.Stat("text1.txt")
 	fileInfo, err = os.Stat(filename)
+	path, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Information about file:", fileInfo.Name())
 
+	fmt.Println("Information about file:", path, fileInfo.Name())
 	size := float64(fileInfo.Size())
 	kibi := size / 1024
 	mebi := size / 1048576
 	gibi := size / 1073741824
-	fmt.Println("File size in Bytes")
-	fmt.Printf("%.2f", size)
-	fmt.Println()
-	fmt.Println("File size in Kibibytes")
-	fmt.Printf("%.2f", kibi)
-	fmt.Println()
-	fmt.Println("File size in Mebibytes")
-	fmt.Printf("%.2f", mebi)
-	fmt.Println()
-	fmt.Println("File size in Gibibytes")
-	fmt.Printf("%.2f", gibi)
-	fmt.Println()
+	fmt.Printf("Size: %.2f in bytes,  %.2f kibibytes,  %.2f mibibytes,  %.2f gibibytes", size, kibi, mebi, gibi)
 
 
 
