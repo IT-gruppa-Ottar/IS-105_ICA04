@@ -1,3 +1,7 @@
+/**
+Se "Get File Info"
+Basert på kodeutsnitt fra: http://www.devdungeon.com/content/working-files-go#write_bytes
+ */
 package filemode
 
 import (
@@ -11,6 +15,11 @@ var (
 	err      error
 )
 
+/**
+Tar filen og skriver ut diverse informasjon om filen, samt filstørrelse
+
+@param filename
+ */
 //noinspection GoUnusedExportedFunction
 func FileInfo(filename string) {
 	// Stat returns file info. It will return
@@ -26,6 +35,7 @@ func FileInfo(filename string) {
 	kibi := size / 1024
 	mebi := size / 1048576
 	gibi := size / 1073741824
+
 	fmt.Println("File size in Bytes")
 	fmt.Printf("%.2f", size)
 	fmt.Println()
@@ -37,11 +47,10 @@ func FileInfo(filename string) {
 	fmt.Println()
 	fmt.Println("File size in Gibibytes")
 	fmt.Printf("%.2f", gibi)
-	fmt.Println()
-
-
 
 	fmt.Println()
+	fmt.Println()
+
 	mode := fileInfo.Mode()
 	fmt.Println("Is a directory: \t\t\t\t", mode&os.ModeDir != 0)
 	fmt.Println("Is a regular file: \t\t\t\t", mode.IsRegular())
@@ -51,5 +60,4 @@ func FileInfo(filename string) {
 	fmt.Println("Is a Unix character device: \t", mode&os.ModeCharDevice != 0)
 	fmt.Println("Is a Unix block device: \t\t", mode&os.ModeSocket != 0)
 	fmt.Println("Is a symbolic link: \t\t\t", mode&os.ModeSymlink != 0)
-
 }
