@@ -2,11 +2,11 @@ package main
 
 import "fmt"
 
+/**
+Oppretter en tabell over fakultetene med andtall studenter og
+sansynlighet for at èn student er i angitt fakultet
+ */
 func main() {
-	oppgave4a()
-}
-
-func oppgave4a() {
 	//fakultet
 	var f [6]string
 	f[0] = "Helse-og idrettsfag \t\t "

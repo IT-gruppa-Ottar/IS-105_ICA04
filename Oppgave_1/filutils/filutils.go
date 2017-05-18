@@ -1,3 +1,7 @@
+/**
+Hentet fra faglærers repository
+https://github.com/uia-worker/is105-ica03/tree/master/fileutils
+ */
 package fileutils
 
 import (
@@ -6,12 +10,19 @@ import (
 	"os"
 )
 
+/**
+Tar filnavnet og leser innholdet. Deretter returnerer det i en byteslice
 
+@param filename av typen string
+@return []byteslice av innholdet til filen
+ */
+//noinspection GoUnusedExportedFunction
 func FileToByteslice(filename string) []byte {
 
-	// Open file for reading
+	// Open file for lesing
 	file, err := os.Open(filename)
 
+	//Error melding
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -32,9 +43,5 @@ func FileToByteslice(filename string) []byte {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	//fmt.Println(byteSlice)
 	return byteSlice
-
 }
-

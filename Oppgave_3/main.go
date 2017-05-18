@@ -1,3 +1,6 @@
+/**
+Basert på: https://github.com/IS-105-GitGroup/IS-105-Gruppe1/blob/master/ICA04/src/oppgaver/oppgave3.go
+ */
 package main
 
 import (
@@ -8,6 +11,12 @@ import (
 	"sort"
 )
 
+/**
+Henter filnavn igjennom os.Args[]
+Kjører "searchFile" med filnavn som parameter og ser etter "\n" som er linjeskift
+Kaller "runes" og kjører filen igjennom funksjonen og lagrer dataen i "temp"
+deretter sorterer den og printer ut med funksjonen "sortRunes"
+ */
 func main() {
 	filename := os.Args[1]
 
@@ -21,14 +30,26 @@ func main() {
 	sortRunes(temp)
 }
 
+/**
+Åpner filen og teller linjeskift.
+
+@param filnavn
+@param søk
+@return int
+ */
 func searchFile(filename string, search string) int{
 	//Åpner filen
 	file, err := os.Open(filename)
+	//test :=
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	buffer := make([]byte, 512*1024)
+	//if (var teller = 0; teller < filename; teller++){
+
+	//}
+	
+	buffer := make([]byte, 6000*1024)
 	//Teller linjeskift
 	counter := 0
 	//Søker på linjeskift
@@ -39,6 +60,12 @@ func searchFile(filename string, search string) int{
 	return counter
 }
 
+/**
+Lagrer runene i et map og returnerer det for videre bruk
+
+@param filnavn
+@return map[int]string
+ */
 func runes(filename string) map[int]string{
 	//Lager map
 	m := make(map[int]string)
@@ -50,10 +77,14 @@ func runes(filename string) map[int]string{
 		rune := string(i)
 		m[counter] = rune
 	}
-	//fmt.Println(counter)
 	return m
 }
 
+/**
+Sorterer mappet og skriver ut de mest brukte i synkende rekkefølge
+
+@param map[int]string
+ */
 func sortRunes(m map[int]string){
 	var keys []int
 
