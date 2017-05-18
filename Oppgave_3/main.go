@@ -40,10 +40,15 @@ func main() {
 func searchFile(filename string, search string) int{
 	//Åpner filen
 	file, err := os.Open(filename)
+	//test :=
 	if err != nil {
 		log.Fatal(err)
 	}
 
+	//if (var teller = 0; teller < filename; teller++){
+
+	//}
+	
 	buffer := make([]byte, 6000*1024)
 	//Teller linjeskift
 	counter := 0
