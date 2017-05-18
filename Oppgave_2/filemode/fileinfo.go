@@ -36,17 +36,7 @@ func FileInfo(filename string) {
 	mebi := size / 1048576
 	gibi := size / 1073741824
 
-	fmt.Println("File size in Bytes")
-	fmt.Printf("%.2f", size)
-	fmt.Println()
-	fmt.Println("File size in Kibibytes")
-	fmt.Printf("%.2f", kibi)
-	fmt.Println()
-	fmt.Println("File size in Mebibytes")
-	fmt.Printf("%.2f", mebi)
-	fmt.Println()
-	fmt.Println("File size in Gibibytes")
-	fmt.Printf("%.2f", gibi)
+	fmt.Printf("Size: %.2f in bytes,  %.2f kibibytes,  %.2f mibibytes,  %.2f gibibytes", size, kibi, mebi, gibi)
 
 	fmt.Println()
 	fmt.Println()
